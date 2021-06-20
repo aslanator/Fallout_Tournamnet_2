@@ -3,6 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Table } from './services/Table';
+import { TableManagment } from './services/TableManagment';
+import { Group } from './services/Group';
+import { Player } from './services/Player';
+
+const tables = [
+  new Table('a'),
+  new Table('b'),
+  new Table('c'),
+];
+
+const tableManagment = new TableManagment(tables);
+
+const groups = [
+  new Group([new Player('1'), new Player('3')]),
+  new Group([new Player('2'), new Player('6')]),
+  new Group([new Player('5'), new Player('4')]),
+]
+tableManagment.x(groups);
+tableManagment.manage(groups);
 
 ReactDOM.render(
   <React.StrictMode>
